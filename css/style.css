@@ -481,11 +481,10 @@ line-height: 1em;
 
 
 @media screen and (max-width: 540px) {
-	/*body{min-height: 600px;
+	body{min-height: 600px;
 		min-width: 450px;
 		overflow: auto;
 }
-*/
 .sb-container div
 	{
 	height: 100%;
@@ -522,15 +521,15 @@ top: 0em;
 }
 
 @media screen and (max-width: 360px) {
-	/*body{
+	body{
 		min-height: 600px;
 		min-width: 450px;
 	    overflow: auto;
-}*/
-/*.main{
+}
+.main{
 	    min-height: 600px;
-}*/
-	.sb-container {top:30%;-webkit-transform: rotate(90deg);}
+}
+	.sb-container {top:50%;-webkit-transform: rotate(90deg);}
 	.sb-container div {top:25%;}
 	.sb-container div{
 	top: 0%;
