@@ -475,7 +475,7 @@ font-family: 'Calligraffitti', cursive;
 line-height: 1em;
 }
 .sb-container{
-	top: 60%;
+	top: 40%;
 }
 }
 
@@ -506,7 +506,7 @@ height: 18em;
 margin: 0 auto;
 transform: rotate(90deg);
 -webkit-transform: rotate(90deg);
-top: 50%;
+top: 20%;
 }
 .main {
 top: 0em;
