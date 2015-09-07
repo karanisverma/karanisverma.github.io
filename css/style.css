@@ -518,6 +518,9 @@ top: 0em;
 .sb-container div{
 	left: 0%;
 }
+.sb-container div:last-child h5{
+	font-size: 2.5em;
+}
 }
 
 @media screen and (max-width: 360px) {
