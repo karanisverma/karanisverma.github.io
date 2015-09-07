@@ -481,16 +481,21 @@ line-height: 1em;
 
 
 @media screen and (max-width: 540px) {
+	body{min-height: 600px;
+		min-width: 450px;
+		overflow: auto;
+}
 .sb-container div
 	{
 	height: 100%;
 	width: 8em;
 	top:0;
 	}
-
+header{top : 0;}
+header span{top: 0;}
 .container > header h1 {
-/* font-size: 6em; */
-top: 1.2em;
+font-size: 4em; 
+top: 0em;
 font-family: 'Calligraffitti', cursive;
 line-height: 1em;
 }
@@ -516,11 +521,17 @@ top: 0em;
 }
 
 @media screen and (max-width: 360px) {
+	body{
+		min-height: 600px;
+		min-width: 450px;
+	    overflow: auto;
+}
 	.sb-container {top:50%;-webkit-transform: rotate(90deg);}
 	.sb-container div {top:25%;}
 	.sb-container div{
 	top: 0%;
 }
+
 }
 .icon-cog:before { content: '\35'; } /* '5' */
 .icon-flight:before { content: '\37'; } /* '7' */

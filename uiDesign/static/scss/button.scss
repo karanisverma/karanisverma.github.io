@@ -490,10 +490,12 @@ body { width: 240px;
     }
     }
     }
-@media (min-width: 360px) {
-body { width: 360px; 
+@media (min-width: 320px) {
+body { width: 320px;
+
     .m_width50{ width: 50%; }
     .content{
+          
               #featureButton{
               button{
               margin-left:5%;              padding:1% 40%;
