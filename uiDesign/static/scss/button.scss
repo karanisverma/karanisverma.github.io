@@ -476,11 +476,30 @@ box-shadow:         0px 0px 2px 2px rgba(50, 50, 50, 0.85);
    }
   }
   
+
 /*Grid Layout for different divices*/
+@media (min-width: 360px) {
+body { width: 360px; 
+    .m_width50{ width: 50%; }
+    .content{
+              #featureButton{
+              button{
+              margin-left:5%;              padding:1% 40%;
+              }
+              }
+    }
+    }
+    }
   @media (min-width: 480px) {
     body { width: 480px; 
     .m_width50{ width: 50%; }
     .content{
+              #featureButton{
+              button{
+              margin-left:10%;
+              padding:1% 30%;
+              }
+              }
                 .button_grid{
                       #button4 {
                         button+div{
@@ -489,9 +508,10 @@ box-shadow:         0px 0px 2px 2px rgba(50, 50, 50, 0.85);
                                   height: .5em;
                                   box-shadow:185px 0 8px rgba(0,0,0,0.7);
                                   }
-                               } 
-                            }
-                    }
+                                } 
+                              }
+                }
+              
             @-moz-keyframes shadowSize {
               0%   { width:80px; margin-left:0px; opacity:1;   box-shadow:185px 0 8px rgba(0,0,0,0.7);}
               50%  { width:50px; margin-left:25px;opacity:0.3; box-shadow:185px 0 15px rgba(0,0,0,0.3);}
@@ -516,6 +536,12 @@ box-shadow:         0px 0px 2px 2px rgba(50, 50, 50, 0.85);
             .t_width25{ width: 25%; }
             .t_width33{ width: 33%; }
             .content{
+                #featureButton{
+              button{
+              margin-left:20%;
+              padding:1% 30%;
+              }
+              }
                 .button_grid{
                       #button4 {
                         button+div{
