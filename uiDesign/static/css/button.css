@@ -460,10 +460,10 @@ html body .content .button_grid #button12 button:active {
   border-color: black;
   color: white;
 }
-@media (min-width: 360px) {
+@media (min-width: 240px) {
   /* line 482, ../scss/button.scss */
   html body {
-    width: 360px;
+    width: 240px;
   }
   /* line 483, ../scss/button.scss */
   html body .m_width50 {
@@ -471,14 +471,14 @@ html body .content .button_grid #button12 button:active {
   }
   /* line 486, ../scss/button.scss */
   html body .content #featureButton button {
-    margin-left: 5%;
-    padding: 1% 40%;
+    margin-left: 10%;
+    padding: 1% 30%;
   }
 }
-@media (min-width: 480px) {
+@media (min-width: 360px) {
   /* line 494, ../scss/button.scss */
   html body {
-    width: 480px;
+    width: 360px;
   }
   /* line 495, ../scss/button.scss */
   html body .m_width50 {
@@ -486,10 +486,25 @@ html body .content .button_grid #button12 button:active {
   }
   /* line 498, ../scss/button.scss */
   html body .content #featureButton button {
+    margin-left: 5%;
+    padding: 1% 40%;
+  }
+}
+@media (min-width: 480px) {
+  /* line 506, ../scss/button.scss */
+  html body {
+    width: 480px;
+  }
+  /* line 507, ../scss/button.scss */
+  html body .m_width50 {
+    width: 50%;
+  }
+  /* line 510, ../scss/button.scss */
+  html body .content #featureButton button {
     margin-left: 10%;
     padding: 1% 30%;
   }
-  /* line 505, ../scss/button.scss */
+  /* line 517, ../scss/button.scss */
   html body .content .button_grid #button4 button + div {
     background: inherit;
     width: 80px;
@@ -538,40 +553,40 @@ html body .content .button_grid #button12 button:active {
   }
 }
 @media (min-width: 768px) {
-  /* line 531, ../scss/button.scss */
+  /* line 543, ../scss/button.scss */
   html body {
     width: 768px;
   }
-  /* line 532, ../scss/button.scss */
+  /* line 544, ../scss/button.scss */
   html body .t_width100 {
     width: 100%;
   }
-  /* line 533, ../scss/button.scss */
+  /* line 545, ../scss/button.scss */
   html body .t_width50 {
     width: 50%;
   }
-  /* line 534, ../scss/button.scss */
+  /* line 546, ../scss/button.scss */
   html body .t_width75 {
     width: 75%;
   }
-  /* line 535, ../scss/button.scss */
+  /* line 547, ../scss/button.scss */
   html body .t_width66 {
     width: 66%;
   }
-  /* line 536, ../scss/button.scss */
+  /* line 548, ../scss/button.scss */
   html body .t_width25 {
     width: 25%;
   }
-  /* line 537, ../scss/button.scss */
+  /* line 549, ../scss/button.scss */
   html body .t_width33 {
     width: 33%;
   }
-  /* line 540, ../scss/button.scss */
+  /* line 552, ../scss/button.scss */
   html body .content #featureButton button {
     margin-left: 20%;
     padding: 1% 30%;
   }
-  /* line 547, ../scss/button.scss */
+  /* line 559, ../scss/button.scss */
   html body .content .button_grid #button4 button + div {
     background: inherit;
     width: 80px;
@@ -620,35 +635,35 @@ html body .content .button_grid #button12 button:active {
   }
 }
 @media (min-width: 1024px) {
-  /* line 571, ../scss/button.scss */
+  /* line 583, ../scss/button.scss */
   html body {
     width: 1024px;
   }
-  /* line 572, ../scss/button.scss */
+  /* line 584, ../scss/button.scss */
   html body .width100 {
     width: 100%;
   }
-  /* line 573, ../scss/button.scss */
+  /* line 585, ../scss/button.scss */
   html body .width50 {
     width: 50%;
   }
-  /* line 574, ../scss/button.scss */
+  /* line 586, ../scss/button.scss */
   html body .width75 {
     width: 75%;
   }
-  /* line 575, ../scss/button.scss */
+  /* line 587, ../scss/button.scss */
   html body .width66 {
     width: 66%;
   }
-  /* line 576, ../scss/button.scss */
+  /* line 588, ../scss/button.scss */
   html body .width25 {
     width: 25%;
   }
-  /* line 577, ../scss/button.scss */
+  /* line 589, ../scss/button.scss */
   html body .width33 {
     width: 33%;
   }
-  /* line 581, ../scss/button.scss */
+  /* line 593, ../scss/button.scss */
   html body .content .button_grid #button4 button + div {
     background: inherit;
     width: 80px;
