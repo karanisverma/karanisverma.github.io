@@ -485,6 +485,7 @@ line-height: 1em;
 		min-width: 450px;
 		overflow: auto;
 }
+
 .sb-container div
 	{
 	height: 100%;
@@ -510,6 +511,8 @@ top: 20%;
 }
 .main {
 top: 0em;
+min-height: 600px;
+
 }	
 .sb-container div:last-child h5{
 
@@ -525,6 +528,9 @@ top: 0em;
 		min-height: 600px;
 		min-width: 450px;
 	    overflow: auto;
+}
+.main{
+	    min-height: 600px;
 }
 	.sb-container {top:50%;-webkit-transform: rotate(90deg);}
 	.sb-container div {top:25%;}
