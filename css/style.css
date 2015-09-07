@@ -475,17 +475,17 @@ font-family: 'Calligraffitti', cursive;
 line-height: 1em;
 }
 .sb-container{
-	top: 40%;
+	top: 60%;
 }
 }
 
 
 @media screen and (max-width: 540px) {
-	body{min-height: 600px;
+	/*body{min-height: 600px;
 		min-width: 450px;
 		overflow: auto;
 }
-
+*/
 .sb-container div
 	{
 	height: 100%;
@@ -511,8 +511,6 @@ top: 20%;
 }
 .main {
 top: 0em;
-min-height: 600px;
-
 }	
 .sb-container div:last-child h5{
 
@@ -524,15 +522,15 @@ min-height: 600px;
 }
 
 @media screen and (max-width: 360px) {
-	body{
+	/*body{
 		min-height: 600px;
 		min-width: 450px;
 	    overflow: auto;
-}
-.main{
+}*/
+/*.main{
 	    min-height: 600px;
-}
-	.sb-container {top:50%;-webkit-transform: rotate(90deg);}
+}*/
+	.sb-container {top:30%;-webkit-transform: rotate(90deg);}
 	.sb-container div {top:25%;}
 	.sb-container div{
 	top: 0%;
