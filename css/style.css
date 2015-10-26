@@ -218,7 +218,7 @@ overflow: hidden;
     text-shadow:none;
    
 }
-
+/* Smartphones (portrait) ----------- */
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
@@ -228,8 +228,9 @@ overflow: hidden;
 }
 }
 
+
 /* Smartphones (landscape) ----------- */
-@media only screen and (min-width : 321px) {
+@media only screen and (min-width : 421px) {
 		.page p {
 			line-height: 1.5em;
 		    font-size: 2.5em;
@@ -266,8 +267,9 @@ overflow: hidden;
 			text-shadow: 7px 7px 7px #060606;
 			}
 }
-/* Smartphones (portrait) ----------- */
-@media only screen and (max-device-width:320px) {
+
+
+@media only screen and (min-width:400px) {
 
 .textblock{
 			height: 43em;
@@ -284,11 +286,14 @@ overflow: hidden;
 			background-position-y: 33em;
 		}
 		#page2{
-			background-position-y: 33em;
+			background-position-y: 31em;
 		}
-
+		.page h2 {
+    color: #FFFFFF;
+    -webkit-text-stroke-width: 3px;
 }
 
+}
 
 
 /* iPads (portrait and landscape) ----------- */
