@@ -267,10 +267,11 @@ overflow: hidden;
 			}
 }
 /* Smartphones (portrait) ----------- */
-@media only screen and (max-width: 320px) {
+@media only screen and (max-device-width:320px) {
+
 .textblock{
 			height: 43em;
-			padding: 5em 2em;
+			padding: 0em 2em;
 		}
 		.page h1{
 			color: #FF4141;
@@ -278,6 +279,13 @@ overflow: hidden;
 			-webkit-text-stroke-color: black;
 			text-shadow: 7px 7px 7px #060606;
 			}
+
+		#page1{
+			background-position-y: 33em;
+		}
+		#page2{
+			background-position-y: 33em;
+		}
 
 }
 
