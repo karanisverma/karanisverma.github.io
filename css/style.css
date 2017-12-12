@@ -221,10 +221,11 @@ overflow: hidden;
 /* Smartphones (portrait) ----------- */
 
 /* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+@media only screen and (min-device-width : 240px) and (max-device-width : 480px) {
 .page h2{
 	color: #FFFFFF;
-    -webkit-text-stroke-width: 3px;
+	-webkit-text-stroke-width: 3px;
+	font-size: 3em;
 }
 }
 
