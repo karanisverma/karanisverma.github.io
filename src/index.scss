@@ -1,0 +1,10 @@
+body{
+  display: flex;
+  transition: all .5s;
+  user-select: none;
+  background: linear-gradient(to bottom, white, black);
+  nav{
+    background-color: yellow;
+    font-size: 32px;
+  }
+}

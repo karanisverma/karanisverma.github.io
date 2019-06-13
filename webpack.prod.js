@@ -1,0 +1,72 @@
+const path = require("path")
+const common = require('./webpack.config');
+const merge = require('webpack-merge');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const htmlWebpackMultiBuildPlugin = require('html-webpack-multi-build-plugin');
+// const template = require.resolve('html-webpack-multi-build-plugin/template.ejs') 
+
+module.exports = merge(common, { 
+    mode : "production",
+    devtool: 'none',
+    output: { filename: "[name].[contentHash].js"},
+    module: {
+      rules: [
+        {
+          test: /\.(svg|png|jpg|gif)$/,
+          use: { 
+            loader: "file-loader",
+            options: { 
+            name: "[name].[hash].[ext]",
+            outputPath: "images" 
+            }
+          }
+        },
+        {
+          test: /\.html$/,
+          use: ["html-loader"] 
+        },
+        {
+          test: /\.scss$/,
+          exclude: /node_modules/,
+          use: [
+            {
+              loader: MiniCssExtractPlugin.loader,
+            },
+            {
+              loader: 'css-loader',
+              options: {
+                importLoaders: 1,
+                sourceMap: true
+              }
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                sourceMap: true
+              }
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: true
+              }
+            },
+          ]
+        }
+      ]
+    },
+    plugins: [
+      new HtmlWebpackPlugin({ 
+        template: "./src/index.html"
+      }), // this is to generate html file with imported scripts and styles
+      // new htmlWebpackMultiBuildPlugin(), // this plugin is for including module and nonmodule script
+      new CleanWebpackPlugin(), // this plugin is for cleaning build files
+      new MiniCssExtractPlugin({
+          filename: "[name].css",
+          chunkFilename: "[id].css"
+      }) // this plugin is for extracting css files from js 
+    ]
+  })
