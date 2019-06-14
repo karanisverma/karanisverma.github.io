@@ -1,0 +1,136 @@
+/* -------------------------------- 
+Typography
+-------------------------------- */
+
+:root {
+  --font-display: 'Questrial', sans-serif;
+  --font-paragraph: 'Questrial', serif;
+  --font-paragraph-color:#727272;
+  --color-text-heading: #4f4f4f;
+
+  /* set base values */
+  --text-base-size: 1em;
+  --text-scale-ratio: 1.2;
+
+  /* type scale */
+  --text-xs: calc(1em / (var(--text-scale-ratio) * var(--text-scale-ratio)));
+  --text-sm: calc(1em / var(--text-scale-ratio));
+  --text-md: calc(1em * var(--text-scale-ratio));
+  --text-lg: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio));
+  --text-xl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+  --text-xxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+  --text-xxxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+
+  /* line-height */
+  --heading-line-height: 1.2;
+  --body-line-height: 1.4;
+}
+
+@include breakpoint(md) {
+  :root {
+      --text-base-size: 1.25em;
+      --text-scale-ratio: 1.25;
+  }
+}
+
+body {
+  font-size: var(--text-base-size);
+  font-family: var(--font-display);
+  color: var(--color-text);
+}
+
+h1, h2, h3, h4, form legend {
+  color: var(--color-text-heading);
+  margin-bottom: var(--space-xxs);
+  line-height: var(--heading-line-height);
+}
+
+/* text size */
+.text--xxxl {
+  font-size: var(--text-xxxl);
+}
+
+h1, .text--xxl {
+  font-size: var(--text-xxl);
+}
+
+h2, .text--xl {
+  font-size: var(--text-xl);
+}
+
+h3, .text--lg {
+  font-size: var(--text-lg);
+}
+
+h4, .text--md {
+  font-size: var(--text-md);
+}
+
+.text--sm, small {
+  font-size: var(--text-sm);
+}
+
+.text--xs {
+  font-size: var(--text-xs);
+}
+
+p {
+  font-family: var(--font-paragraph);
+  color: var(--font-paragraph-color);
+  line-height: var(--body-line-height);
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+  &:visited {
+      color: var(--color-link-visited);
+  }
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+.text-container {
+  h2, h3, h4 {
+      margin-top: var(--space-sm);
+  }
+  
+  ul, ol, p {
+      margin-bottom: var(--space-md);
+  }
+
+  ul, ol {
+  list-style-position: outside;
+      padding-left: 24px;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+  }
+
+  ul li, ol li {
+      line-height: var(--body-line-height);
+  }
+  
+  em {
+      font-style: italic;
+  }
+
+  u {
+      text-decoration: underline;
+  }
+}
+
+/* utility classes */
+.truncate {
+  // truncate text if it exceeds parent
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
