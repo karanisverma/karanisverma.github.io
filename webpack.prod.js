@@ -3,8 +3,10 @@ const common = require('./webpack.config');
 const merge = require('webpack-merge');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 // const htmlWebpackMultiBuildPlugin = require('html-webpack-multi-build-plugin');
 // const template = require.resolve('html-webpack-multi-build-plugin/template.ejs') 
 
@@ -12,6 +14,20 @@ module.exports = merge(common, {
     mode : "production",
     devtool: 'none',
     output: { filename: "[name].[contentHash].js"},
+    optimization:{
+      minimizer:[
+        new OptimizeCssAssetsPlugin(),
+        new TerserPlugin(),
+        new HtmlWebpackPlugin({ 
+          template: "./src/index.html",
+          minify:{
+            removeAttributeQuotes: true,
+            collapseWhitespace: true,
+            removeComments: true
+          }
+        }),
+      ]
+    },
     module: {
       rules: [
         {
@@ -39,7 +55,7 @@ module.exports = merge(common, {
               loader: 'css-loader',
               options: {
                 importLoaders: 1,
-                sourceMap: true
+                sourceMap: true,
               }
             },
             {
@@ -58,10 +74,7 @@ module.exports = merge(common, {
         }
       ]
     },
-    plugins: [
-      new HtmlWebpackPlugin({ 
-        template: "./src/index.html"
-      }), // this is to generate html file with imported scripts and styles
+    plugins: [ 
       // new htmlWebpackMultiBuildPlugin(), // this plugin is for including module and nonmodule script
       new CleanWebpackPlugin(), // this plugin is for cleaning build files
       new MiniCssExtractPlugin({
