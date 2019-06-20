@@ -1,0 +1,25 @@
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+
+  @include breakpoint(sm) {
+    max-width: 540px;
+  }
+
+  @include breakpoint(md) {
+    max-width: 720px;
+  }
+
+  @include breakpoint(lg) {
+    max-width: 960px;
+  }
+
+  @include breakpoint(xl) {
+    max-width: 1440px;
+    padding-right: 165px;
+    padding-left: 165px;
+  }
+}

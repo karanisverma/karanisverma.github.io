@@ -1,0 +1,14 @@
+.common {
+
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-center-spaced {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

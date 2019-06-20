@@ -1,0 +1,280 @@
+@import "styles/style";
+
+body {
+  width: 80%;
+  margin: auto;
+  font-smooth: always;
+  font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+  -moz-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: subpixel-antialiased;
+  button {
+    @include btn("primary", "small");
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 50px 0px;
+
+    .navbar-logo {
+      font-family: "Oleo Script Swash Caps", cursive;
+      font-size: 2em;
+    }
+    .navbar-links .navbar-wrapper {
+      display: flex;
+      font-size: 0.9em;
+      // font-family: 'Anaheim';
+      font-weight: bold;
+      li {
+        margin: 0 1.5em;
+      }
+    }
+    .navbar-links-social {
+      position: relative;
+      z-index: 1;
+      img {
+        width: 25px;
+        margin: 0 0.2em;
+        filter: invert(1);
+        transition: 0.4s;
+        &:hover {
+          filter: invert(0);
+        }
+      }
+    }
+  }
+  section {
+    &.hero {
+      display: flex;
+      .hero-intro,
+      .hero-illustration {
+        flex: 1;
+      }
+      .hero-illustration {
+        position: relative;
+        top: -142px;
+        .coder {
+          position: absolute;
+          width: 500px;
+          bottom: 115px;
+          right: 10px;
+          z-index: 1;
+        }
+        .coder-background {
+          position: relative;
+          z-index: 0;
+          left: 25%;
+        }
+      }
+      .hero-intro {
+        margin-top: 5em;
+        word-spacing: 2px;
+        color: #4f4f4f;
+        h1,
+        h2,
+        p {
+          line-height: 1.5;
+        }
+        p {
+          width: 80%;
+          font-size: 1em;
+          margin: 1.5em 0px;
+        }
+      }
+    }
+    &.skill-set {
+      display: flex;
+      .skill-set-content {
+        width: 100%;
+        p {
+          margin-top: 1em;
+        }
+        h4 {
+          margin-top: 1em;
+          font-weight: bold;
+        }
+      }
+      .skill-set-items-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .skill-set-item {
+        width: 40%;
+        margin: 5%;
+      }
+      .skill-set-illustration-wrapper {
+        position: relative;
+        width: 50%;
+      }
+      .skill-set-icon {
+        padding: 0.3em;
+        background: #35cd61;
+        border-radius: 5em;
+        height: 3em;
+        width: 3em;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        box-shadow: inset 0 0 8px rgba(67, 67, 67, 0.28);
+        .icon {
+          height: 3.5em;
+          width: 3.5em;
+        }
+      }
+      .circle {
+        width: 13em;
+        height: 13em;
+        border-radius: 100%;
+        background: #35cd61;
+        left: -15em;
+        top: -4.5em;
+        position: absolute;
+      }
+      .skill-set-illustration img {
+        height: 50em;
+        position: relative;
+        left: -36%;
+        top: -5%;
+      }
+    }
+    &.projects {
+      margin-top: 3em;
+      margin-bottom: 3em;
+      h2 {
+        margin-bottom: 2em;
+      }
+      position: relative;
+      .project {
+        z-index: 1;
+        position: relative;
+        display: flex;
+        width: 55%;
+        margin-left: 5em;
+        margin-bottom: 5em;
+        &:nth-of-type(3) {
+          margin-left: 15em;
+        }
+        img {
+          border-radius: 18px;
+          border: 0;
+          box-shadow: none;
+          width: 200px;
+          margin-right: 2em;
+          box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+            0 8px 16px -8px rgba(0, 0, 0, 0.3),
+            0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+        }
+        .project-details {
+          padding-top: 1.5em;
+          .project-name {
+            font-size: var(--text-lg);
+            margin-bottom: 0.5em;
+            font-weight: bold;
+            color: #4f4f4f;
+          }
+          .project-description {
+            line-height: 1.5em;
+            font-size: var(--text-sm);
+            color: var(--font-paragraph-color);
+          }
+        }
+      }
+      .ring-wrapper {
+        position: absolute;
+        height: 35em;
+        width: 35em;
+        display: flex;
+        top: 33%;
+        left: -45%;
+        align-self: center;
+      }
+      .circle-outer {
+        background: #35cd61;
+        width: 100%;
+        position: relative;
+        height: 100%;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .circle-inner {
+        width: 60%;
+        height: 60%;
+        position: relative;
+        background: white;
+        border-radius: 100%;
+      }
+    }
+    &.blog {
+      margin-top: 10em;
+      position: relative;
+      .blog-title{
+        font-weight: bold;
+        margin-bottom: .5em;
+      }
+      .blog-posts{
+        position: relative;
+        z-index: 1;
+        height: 32em;
+        padding-top: 6em;
+        h2{
+          margin-bottom: 1em;
+        }
+      }
+      .article-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .blog-description{
+        font-size: var(--text-sm);
+      }
+      .blog-post-illustration {
+        height: 50em;
+        position: absolute;
+        right: -12.5%;
+        top: 0;
+      }
+      article {
+        width: 35%;
+        cursor: pointer;
+        background: white;
+        margin: 1%;
+        padding: 1.5% 4%;
+        box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.1), 0 8px 16px -8px rgba(0, 0, 0, 0.1), 0 -6px 16px -6px rgba(0, 0, 0, 0.01);
+        border-radius: 4px;
+        border: 2px solid transparent;
+        transition-duration: .15s;
+        min-height: 7em;
+        transition-property: color,background-color,box-shadow,transform;
+        &:hover{
+          transform: translateY(-2px);
+          border: 2px solid rgba(53, 205, 97, 0.8);
+          box-shadow: 0 30px 60px -12px rgba(50,50,93,0.1), 0 18px 36px -18px rgba(0,0,0,0.1), 0 -12px 36px -8px rgba(0,0,0,.01);
+        }
+      }
+      .circle {
+        width: 13em;
+        height: 13em;
+        border-radius: 100%;
+        background: #35cd61;
+        right: 5em;
+        position: absolute;
+        bottom: 0em;
+      }
+    }
+  }
+  footer{
+    width: 70%;
+    height: 10em;
+    max-height: 10em;
+    position: relative;
+    h2{
+      margin-bottom: 1em;
+    }
+  }
+}

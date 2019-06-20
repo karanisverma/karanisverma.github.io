@@ -1,0 +1,81 @@
+.btn {
+  border: none;
+  padding: 15px 35px;
+  font-size: 16px;
+  font-weight: 600;
+  vertical-align: middle;
+  cursor: pointer;
+  position: relative;
+  transition: all .1s linear;
+  outline: none;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0;
+
+  &.btn-green {
+    border-radius: 2px;
+    background-color: #35cd61;
+    box-shadow: 0 1px 13px 0 rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+  }
+
+  &:active {
+    top: 1px;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
+  }
+}
+
+@mixin  btn($type:secondary, $size: medium) {
+  cursor: pointer;
+  border-radius: 2px;
+  background-color: #35cd61;
+  font-size: 1em;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-decoration: none;
+  margin: 0;
+  transition: all .1s linear;
+  border-radius: 1em;
+  @if ($type == primary){
+    color: #ffffff;
+    background-color: #35cd61;
+    &:hover{
+      background-color: #518736;
+    }
+    &:focus{
+      background-color: #356122;
+    }
+  }
+  @else if($type == secondary){
+    color: #35cd61;
+    background-color: #ffffff;
+    border:2px solid #35cd61;
+    &:hover{
+      background-color: #35cd61;
+      color: white;
+    }
+    &:focus{
+      background-color: #518736;
+      color: white;
+    }
+  }
+
+  @if($size == large){
+    min-width: 11em;
+    min-height: 3em;
+  }
+  @else if($size == medium){
+    min-width: 10em;
+    min-height: 2.625em;
+  }
+  @else if($size == small) {
+    min-width: 9em;
+    min-height: 2em;
+  }
+  &:disabled{
+    background-color: #bfbfbf;
+  }
+}
