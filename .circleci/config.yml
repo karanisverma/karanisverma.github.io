@@ -9,4 +9,5 @@ jobs:
     steps:
       - checkout
       - run: npm install
+      - run: git config --global user.email "circleci@karanverma.me" && git config --global user.name "Circle CI" 
       - run: npm run deploy
