@@ -9,14 +9,21 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
+      - attach_workspace:
+          at: ~/repo
       - run: npm install
       - run: npm run build
+      - persist_to_workspace:
+          root: .
+          paths: build
   deploy:
     docker:
       - image: 'circleci/python:2.7'
     working_directory: ~/repo
     steps:
       - checkout
+      - attach_workspace:
+          at: ~/repo
       - aws-s3/sync:
           from: build
           to: 's3://karanverma.me'
