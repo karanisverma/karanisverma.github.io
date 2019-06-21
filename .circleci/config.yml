@@ -14,13 +14,16 @@ jobs:
   deploy:
     docker:
       - image: 'circleci/python:2.7'
-    - aws-s3/sync:
-        from: build
-        to: 's3://karanverma.me'
-        arguments: |
-          --acl public-read \
-          --cache-control "max-age=86400"
-        overwrite: true
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - aws-s3/sync:
+          from: build
+          to: 's3://karanverma.me'
+          arguments: |
+            --acl public-read \
+            --cache-control "max-age=86400"
+          overwrite: true
 
 workflows:
   version: 2.1
