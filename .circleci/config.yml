@@ -1,6 +1,7 @@
 # Use the latest 2.1 version of CircleCI pipeline processing engine, see https://circleci.com/docs/2.0/configuration-reference/
 version: 2.1
-
+orbs:
+  aws-s3: circleci/aws-s3@1.0.0
 jobs:
   build:
     docker:
@@ -9,5 +10,26 @@ jobs:
     steps:
       - checkout
       - run: npm install
-      - run: git config --global user.email "circleci@karanverma.me" && git config --global user.name "Circle CI" 
-      - run: npm run deploy
+      - run: npm run build
+  deploy:
+    docker:
+      - image: 'circleci/python:2.7'
+    - aws-s3/sync:
+        from: build
+        to: 's3://karanverma.me'
+        arguments: |
+          --acl public-read \
+          --cache-control "max-age=86400"
+        overwrite: true
+
+workflows:
+  version: 2.1
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
