@@ -10,6 +10,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   -webkit-font-smoothing: subpixel-antialiased;
+  @include breakpoint(md){
+    width: 95%;
+    }
   button {
     @include btn("primary", "small");
   }
@@ -17,6 +20,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    z-index: 1;
 
     padding: 50px 0px;
 
@@ -53,27 +58,47 @@ body {
       .hero-intro,
       .hero-illustration {
         flex: 1;
+        @include breakpoint(md) {
+          right: -12.5%;
+        }
       }
       .hero-illustration {
         position: relative;
         top: -142px;
+        // @include breakpoint(md){
+        //   top: -200px;
+        // }
         .coder {
           position: absolute;
           width: 500px;
           bottom: 115px;
           right: 10px;
           z-index: 1;
+          @include breakpoint(md){
+            right: 0;
+            bottom: 0;
+          }
         }
         .coder-background {
           position: relative;
           z-index: 0;
           left: 25%;
+          @include breakpoint(md){
+          left:0;
+          }
         }
       }
       .hero-intro {
         margin-top: 5em;
         word-spacing: 2px;
         color: #4f4f4f;
+        @include breakpoint(md){
+          width: 80%;
+          position: absolute;
+          z-index: 1;
+          left: 5%;
+          margin-top: 1em;
+        }
         h1,
         h2,
         p {
@@ -83,11 +108,18 @@ body {
           width: 80%;
           font-size: 1em;
           margin: 1.5em 0px;
+          @include breakpoint(md){
+            width: 60%;
+          }
         }
       }
     }
     &.skill-set {
       display: flex;
+      @include breakpoint(md){
+        margin-top: 3em;
+        margin-bottom: 3em;
+      }
       .skill-set-content {
         width: 100%;
         p {
@@ -101,6 +133,7 @@ body {
       .skill-set-items-wrapper {
         display: flex;
         flex-wrap: wrap;
+        position: relative;
       }
       .skill-set-item {
         width: 40%;
@@ -109,6 +142,10 @@ body {
       .skill-set-illustration-wrapper {
         position: relative;
         width: 50%;
+        @include breakpoint(md){
+          width: 0%;
+          left: -13%;
+        }
       }
       .skill-set-icon {
         padding: 0.3em;
@@ -139,6 +176,11 @@ body {
         position: relative;
         left: -36%;
         top: -5%;
+        @include breakpoint(md){
+          height: 30em;
+          top: 7em;
+          opacity: .2;
+        }
       }
     }
     &.projects {
@@ -155,8 +197,14 @@ body {
         width: 55%;
         margin-left: 5em;
         margin-bottom: 5em;
+        @include breakpoint(md) {
+          width: 80%;
+        }
         &:nth-of-type(3) {
           margin-left: 15em;
+          @include breakpoint(md) {
+            margin-left: 5em;
+          }
         }
         img {
           border-radius: 18px;
@@ -191,6 +239,11 @@ body {
         top: 33%;
         left: -45%;
         align-self: center;
+        @include breakpoint(md){
+          opacity: .2;
+          height: 30em;
+          width: 30em;
+        }
       }
       .circle-outer {
         background: #35cd61;
@@ -251,6 +304,12 @@ body {
         transition-duration: .15s;
         min-height: 7em;
         transition-property: color,background-color,box-shadow,transform;
+        @include breakpoint(md){
+          width: 38%;
+        }
+        @include breakpoint(sm){
+          width: 75%;
+        }
         &:hover{
           transform: translateY(-2px);
           border: 2px solid rgba(53, 205, 97, 0.8);
@@ -265,6 +324,9 @@ body {
         right: 5em;
         position: absolute;
         bottom: 0em;
+        @include breakpoint(md){
+          right: 8em;
+        }
       }
     }
   }
@@ -273,8 +335,16 @@ body {
     height: 10em;
     max-height: 10em;
     position: relative;
+    @include breakpoint(md){
+      width: 100%;
+    }
     h2{
       margin-bottom: 1em;
+      @include breakpoint(md){
+        font-size: 1em;
+        position: relative;
+        z-index: 1;
+      }
     }
   }
 }
