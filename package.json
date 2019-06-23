@@ -9,7 +9,7 @@
     "dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "optimize": "subfont ./dist/index.html -i",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build"
   },
   "author": "Karan Verma",
   "license": "ISC",
