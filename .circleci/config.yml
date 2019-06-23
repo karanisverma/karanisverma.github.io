@@ -33,13 +33,12 @@ jobs:
             --content-encoding "gzip"
           overwrite: true
       # This is a work around for uploading index,html in not gzipped form
-      - aws-s3/sync:
+      - aws-s3/copy:
           from: build/index.html
           to: 's3://karanverma.me'
           arguments: |
             --acl public-read \
             --cache-control "max-age=31557600" \
-          overwrite: true
 
 workflows:
   version: 2.1
