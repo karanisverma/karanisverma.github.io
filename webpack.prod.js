@@ -80,7 +80,7 @@ module.exports = merge(common, {
       // new htmlWebpackMultiBuildPlugin(), // this plugin is for including module and nonmodule script
       new CleanWebpackPlugin(), // this plugin is for cleaning build files
       new MiniCssExtractPlugin({
-          filename: "[name].css",
+          filename: "[name].[contentHash].css",
           chunkFilename: "[id].css"
       }), // this plugin is for extracting css files from js 
       new CompressionPlugin({
