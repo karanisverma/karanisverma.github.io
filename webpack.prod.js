@@ -6,6 +6,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 // const htmlWebpackMultiBuildPlugin = require('html-webpack-multi-build-plugin');
 // const template = require.resolve('html-webpack-multi-build-plugin/template.ejs') 
@@ -80,6 +81,14 @@ module.exports = merge(common, {
       new MiniCssExtractPlugin({
           filename: "[name].css",
           chunkFilename: "[id].css"
-      }) // this plugin is for extracting css files from js 
+      }), // this plugin is for extracting css files from js 
+      new CompressionPlugin({
+        filename: '[path].gz[query]',
+        algorithm: 'gzip',
+        test: /\.(js|css|html|svg|ttf|woff|eot)$/,
+        threshold: 10240,
+        minRatio: 0.8,
+        deleteOriginalAssets: false,
+      }),
     ]
   })
