@@ -1,3 +1,5 @@
+[![CodeFactor](https://www.codefactor.io/repository/github/karanisverma/karanisverma.github.io/badge)](https://www.codefactor.io/repository/github/karanisverma/karanisverma.github.io)
+
 If you want to run `npm run optimize` you would have to install subfont. Please follow the folllowing steps:
 
 subfont Installation

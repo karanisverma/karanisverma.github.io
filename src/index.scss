@@ -10,11 +10,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   -webkit-font-smoothing: subpixel-antialiased;
-  @include breakpoint(md){
-    width: 95%;
-    }
+  @include breakpoint(md) {
+    width: 100%;
+  }
   button {
     @include btn("primary", "small");
+    @include breakpoint(md) {
+      color: #35cd61;
+      background: white;
+      border-color: #35cd61;
+    }
+    position: relative;
+    z-index: 1;
   }
   header {
     display: flex;
@@ -22,9 +29,14 @@ body {
     align-items: center;
     position: relative;
     z-index: 1;
-
     padding: 50px 0px;
-
+    @include breakpoint(md) {
+      width: 80%;
+      margin: auto;
+    }
+    @include breakpoint(sm) {
+      flex-wrap: wrap;
+    }
     .navbar-logo {
       font-family: "Oleo Script Swash Caps", cursive;
       font-size: 2em;
@@ -36,6 +48,16 @@ body {
       font-weight: bold;
       li {
         margin: 0 1.5em;
+        @include breakpoint(sm) {
+          &:nth-of-type(1) {
+            margin-left: 0;
+          }
+        }
+      }
+    }
+    @include breakpoint(sm) {
+      .navbar-links {
+        margin-top: 1em;
       }
     }
     .navbar-links-social {
@@ -50,41 +72,58 @@ body {
           filter: invert(0);
         }
       }
+      @include breakpoint(sm) {
+        margin-top: 1em;
+        img {
+          filter: none;
+        }
+      }
     }
   }
   section {
     &.hero {
       display: flex;
+      @include breakpoint(sm) {
+        flex-direction: column-reverse;
+      }
       .hero-intro,
       .hero-illustration {
         flex: 1;
         @include breakpoint(md) {
-          right: -12.5%;
+          // right: -12.5%;
         }
       }
       .hero-illustration {
         position: relative;
         top: -142px;
-        // @include breakpoint(md){
-        //   top: -200px;
-        // }
+        @include breakpoint(sm) {
+          top: -225px;
+        }
+        @include breakpoint(md) {
+          top: -225px;
+        }
         .coder {
           position: absolute;
           width: 500px;
           bottom: 115px;
           right: 10px;
           z-index: 1;
-          @include breakpoint(md){
+          @include breakpoint(md) {
             right: 0;
             bottom: 0;
+          }
+          @include breakpoint(sm) {
+            right: 0;
+            bottom: 0;
+            width: 80%;
           }
         }
         .coder-background {
           position: relative;
           z-index: 0;
           left: 25%;
-          @include breakpoint(md){
-          left:0;
+          @include breakpoint(md) {
+            left: 0;
           }
         }
       }
@@ -92,12 +131,18 @@ body {
         margin-top: 5em;
         word-spacing: 2px;
         color: #4f4f4f;
-        @include breakpoint(md){
+        @include breakpoint(md) {
           width: 80%;
           position: absolute;
           z-index: 1;
-          left: 5%;
           margin-top: 1em;
+          margin-left: 10%;
+        }
+        @include breakpoint(sm) {
+          position: relative;
+          width: 80%;
+          top: -150px;
+          margin: auto;
         }
         h1,
         h2,
@@ -108,20 +153,30 @@ body {
           width: 80%;
           font-size: 1em;
           margin: 1.5em 0px;
-          @include breakpoint(md){
+          @include breakpoint(md) {
             width: 60%;
+          }
+          @include breakpoint(sm) {
+            width: 100%;
           }
         }
       }
     }
     &.skill-set {
       display: flex;
-      @include breakpoint(md){
+      @include breakpoint(md) {
         margin-top: 3em;
         margin-bottom: 3em;
       }
       .skill-set-content {
         width: 100%;
+        @include breakpoint(md) {
+          width: 80%;
+          margin: auto;
+          h2 {
+            margin-bottom: 2em;
+          }
+        }
         p {
           margin-top: 1em;
         }
@@ -138,11 +193,14 @@ body {
       .skill-set-item {
         width: 40%;
         margin: 5%;
+        @include breakpoint(sm) {
+          width: 90%;
+        }
       }
       .skill-set-illustration-wrapper {
         position: relative;
         width: 50%;
-        @include breakpoint(md){
+        @include breakpoint(md) {
           width: 0%;
           left: -13%;
         }
@@ -176,10 +234,10 @@ body {
         position: relative;
         left: -36%;
         top: -5%;
-        @include breakpoint(md){
+        @include breakpoint(md) {
           height: 30em;
           top: 7em;
-          opacity: .2;
+          opacity: 0.2;
         }
       }
     }
@@ -188,6 +246,11 @@ body {
       margin-bottom: 3em;
       h2 {
         margin-bottom: 2em;
+      }
+      @include breakpoint(md) {
+        width: 80%;
+        margin: auto;
+        margin-top: 10em;
       }
       position: relative;
       .project {
@@ -198,12 +261,25 @@ body {
         margin-left: 5em;
         margin-bottom: 5em;
         @include breakpoint(md) {
-          width: 80%;
+          width: 100%;
+          margin-left: 1em;
+          margin-bottom: 2em;
+        }
+        @include breakpoint(sm) {
+          margin: 3.5em auto;
+          flex-direction: column;
+          display: flex;
+          margin-left: 5%;
         }
         &:nth-of-type(3) {
           margin-left: 15em;
           @include breakpoint(md) {
             margin-left: 5em;
+            margin-left: 1em;
+          }
+          @include breakpoint(sm) {
+            margin: 3.5em auto;
+            margin-left: 5%;
           }
         }
         img {
@@ -215,9 +291,19 @@ body {
           box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
             0 8px 16px -8px rgba(0, 0, 0, 0.3),
             0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+          @include breakpoint(sm) {
+            margin: 0;
+          }
         }
         .project-details {
           padding-top: 1.5em;
+          @include breakpoint(md) {
+            padding-top: 0;
+          }
+          @include breakpoint(sm) {
+            padding-top: 1em;
+            width: 90%;
+          }
           .project-name {
             font-size: var(--text-lg);
             margin-bottom: 0.5em;
@@ -239,10 +325,14 @@ body {
         top: 33%;
         left: -45%;
         align-self: center;
-        @include breakpoint(md){
-          opacity: .2;
+        @include breakpoint(md) {
+          opacity: 0.2;
           height: 30em;
           width: 30em;
+        }
+        @include breakpoint(sm) {
+          height: 15em;
+          width: 100%;
         }
       }
       .circle-outer {
@@ -266,16 +356,27 @@ body {
     &.blog {
       margin-top: 10em;
       position: relative;
-      .blog-title{
-        font-weight: bold;
-        margin-bottom: .5em;
+      @include breakpoint(sm) {
+        margin-top: 5em;
       }
-      .blog-posts{
+      .blog-title {
+        font-weight: bold;
+        margin-bottom: 0.5em;
+      }
+      .blog-posts {
         position: relative;
         z-index: 1;
         height: 32em;
         padding-top: 6em;
-        h2{
+        @include breakpoint(sm) {
+          height: auto;
+          padding-top: 0;
+        }
+        @include breakpoint(md) {
+          width: 80%;
+          margin: auto;
+        }
+        h2 {
           margin-bottom: 1em;
         }
       }
@@ -283,7 +384,7 @@ body {
         display: flex;
         flex-wrap: wrap;
       }
-      .blog-description{
+      .blog-description {
         font-size: var(--text-sm);
       }
       .blog-post-illustration {
@@ -291,6 +392,13 @@ body {
         position: absolute;
         right: -12.5%;
         top: 0;
+        @include breakpoint(sm) {
+          bottom: 0;
+          top: auto;
+        }
+        @include breakpoint(md) {
+          right: 0;
+        }
       }
       article {
         width: 35%;
@@ -298,22 +406,27 @@ body {
         background: white;
         margin: 1%;
         padding: 1.5% 4%;
-        box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.1), 0 8px 16px -8px rgba(0, 0, 0, 0.1), 0 -6px 16px -6px rgba(0, 0, 0, 0.01);
+        box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.1),
+          0 8px 16px -8px rgba(0, 0, 0, 0.1),
+          0 -6px 16px -6px rgba(0, 0, 0, 0.01);
         border-radius: 4px;
         border: 2px solid transparent;
-        transition-duration: .15s;
+        transition-duration: 0.15s;
         min-height: 7em;
-        transition-property: color,background-color,box-shadow,transform;
-        @include breakpoint(md){
+        transition-property: color, background-color, box-shadow, transform;
+        @include breakpoint(md) {
           width: 38%;
         }
-        @include breakpoint(sm){
-          width: 75%;
+        @include breakpoint(sm) {
+          margin: 0.5em;
+          width: 80%;
         }
-        &:hover{
+        &:hover {
           transform: translateY(-2px);
           border: 2px solid rgba(53, 205, 97, 0.8);
-          box-shadow: 0 30px 60px -12px rgba(50,50,93,0.1), 0 18px 36px -18px rgba(0,0,0,0.1), 0 -12px 36px -8px rgba(0,0,0,.01);
+          box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.1),
+            0 18px 36px -18px rgba(0, 0, 0, 0.1),
+            0 -12px 36px -8px rgba(0, 0, 0, 0.01);
         }
       }
       .circle {
@@ -324,23 +437,31 @@ body {
         right: 5em;
         position: absolute;
         bottom: 0em;
-        @include breakpoint(md){
-          right: 8em;
+        @include breakpoint(md) {
+          right: 13em;
+          opacity: 0.2;
+        }
+        @include breakpoint(sm) {
+          display: none;
         }
       }
     }
   }
-  footer{
+  footer {
     width: 70%;
     height: 10em;
     max-height: 10em;
     position: relative;
-    @include breakpoint(md){
-      width: 100%;
+    @include breakpoint(md) {
+      width: 80%;
+      margin: auto;
     }
-    h2{
+    @include breakpoint(sm) {
+      padding-top: 30px;
+    }
+    h2 {
       margin-bottom: 1em;
-      @include breakpoint(md){
+      @include breakpoint(md) {
         font-size: 1em;
         position: relative;
         z-index: 1;
