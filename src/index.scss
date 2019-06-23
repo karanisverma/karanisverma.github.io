@@ -1,8 +1,11 @@
 @import "styles/style";
-
+html{
+  scroll-behavior: smooth;
+}
 body {
   width: 80%;
   margin: auto;
+  scroll-behavior: smooth;
   font-smooth: always;
   font-smoothing: antialiased;
   text-rendering: geometricPrecision;
