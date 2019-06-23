@@ -11,7 +11,7 @@ jobs:
       - checkout
       - attach_workspace:
           at: ~/repo
-      - run: npm install
+      - run: npm ci
       - run: npm run build
       - persist_to_workspace:
           root: .
