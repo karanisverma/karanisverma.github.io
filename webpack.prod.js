@@ -7,7 +7,7 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
-var BrotliPlugin = require('brotli-webpack-plugin');
+// var BrotliPlugin = require('brotli-webpack-plugin');
 
 // const htmlWebpackMultiBuildPlugin = require('html-webpack-multi-build-plugin');
 // const template = require.resolve('html-webpack-multi-build-plugin/template.ejs') 
