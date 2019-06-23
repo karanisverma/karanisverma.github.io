@@ -35,6 +35,9 @@ body {
       width: 80%;
       margin: auto;
     }
+    @include breakpoint(sm){
+flex-wrap: wrap;
+    }
     .navbar-logo {
       font-family: "Oleo Script Swash Caps", cursive;
       font-size: 2em;
@@ -46,14 +49,21 @@ body {
       font-weight: bold;
       li {
         margin: 0 1.5em;
+        @include breakpoint(sm){
+          &:nth-of-type(1) {
+            margin-left: 0
+          }
+        }
+      }
+    }
+    @include breakpoint(sm){
+      .navbar-links{
+        margin-top: 1em;
       }
     }
     .navbar-links-social {
       position: relative;
       z-index: 1;
-      @include breakpoint(sm) {
-        display: none;
-      }
       img {
         width: 25px;
         margin: 0 0.2em;
@@ -61,6 +71,12 @@ body {
         transition: 0.4s;
         &:hover {
           filter: invert(0);
+        }
+      }
+      @include breakpoint(sm) {
+        margin-top: 1em;
+        img{
+          filter: none;
         }
       }
     }
@@ -100,7 +116,7 @@ body {
           @include breakpoint(sm) {
             right: 0;
             bottom: 0;
-            width: 350px;
+            width: 80%;
           }
         }
         .coder-background {
@@ -126,9 +142,9 @@ body {
         }
         @include breakpoint(sm) {
           position: relative;
-          margin: 0;
-          width: 100%;
-          top: -100px;
+          width: 80%;
+          top: -150px;
+          margin:auto;
         }
         h1,
         h2,
@@ -159,6 +175,10 @@ body {
         @include breakpoint(md){
           width: 80%;
           margin: auto;
+          h2{
+            margin-bottom: 2em;
+          }
+          
         }
         p {
           margin-top: 1em;
@@ -176,6 +196,9 @@ body {
       .skill-set-item {
         width: 40%;
         margin: 5%;
+        @include breakpoint(sm){
+          width: 90%;;
+        }
       }
       .skill-set-illustration-wrapper {
         position: relative;
@@ -249,6 +272,7 @@ body {
           margin: 3.5em auto;
           flex-direction: column;
           display: flex;
+          margin-left:5%;
         }
         &:nth-of-type(3) {
           margin-left: 15em;
@@ -258,6 +282,7 @@ body {
           }
           @include breakpoint(sm) {
             margin: 3.5em auto;
+            margin-left:5%;
           }
         }
         img {
@@ -277,6 +302,10 @@ body {
           padding-top: 1.5em;
           @include breakpoint(md){
             padding-top: 0;
+          }
+          @include breakpoint(sm){
+            padding-top: 1em;
+            width: 90%;
           }
           .project-name {
             font-size: var(--text-lg);
@@ -303,6 +332,10 @@ body {
           opacity: 0.2;
           height: 30em;
           width: 30em;
+        }
+        @include breakpoint(sm) {
+          height: 15em;
+          width: 100%;
         }
       }
       .circle-outer {
@@ -388,7 +421,8 @@ body {
           width: 38%;
         }
         @include breakpoint(sm) {
-          width: 75%;
+          width: 80%;
+          margin:.5em;
         }
         &:hover {
           transform: translateY(-2px);
