@@ -13,8 +13,7 @@
   },
   "author": "Karan Verma",
   "license": "ISC",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^9.6.0",
     "clean-webpack-plugin": "^3.0.0",
