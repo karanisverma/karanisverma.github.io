@@ -14,10 +14,9 @@ body {
     width: 100%;
   }
   button {
-    
     @include btn("primary", "small");
     @include breakpoint(md) {
-      color:#35cd61;
+      color: #35cd61;
       background: white;
       border-color: #35cd61;
     }
@@ -31,12 +30,12 @@ body {
     position: relative;
     z-index: 1;
     padding: 50px 0px;
-    @include breakpoint(md){
+    @include breakpoint(md) {
       width: 80%;
       margin: auto;
     }
-    @include breakpoint(sm){
-flex-wrap: wrap;
+    @include breakpoint(sm) {
+      flex-wrap: wrap;
     }
     .navbar-logo {
       font-family: "Oleo Script Swash Caps", cursive;
@@ -49,15 +48,15 @@ flex-wrap: wrap;
       font-weight: bold;
       li {
         margin: 0 1.5em;
-        @include breakpoint(sm){
+        @include breakpoint(sm) {
           &:nth-of-type(1) {
-            margin-left: 0
+            margin-left: 0;
           }
         }
       }
     }
-    @include breakpoint(sm){
-      .navbar-links{
+    @include breakpoint(sm) {
+      .navbar-links {
         margin-top: 1em;
       }
     }
@@ -75,7 +74,7 @@ flex-wrap: wrap;
       }
       @include breakpoint(sm) {
         margin-top: 1em;
-        img{
+        img {
           filter: none;
         }
       }
@@ -125,7 +124,6 @@ flex-wrap: wrap;
           left: 25%;
           @include breakpoint(md) {
             left: 0;
-            
           }
         }
       }
@@ -144,7 +142,7 @@ flex-wrap: wrap;
           position: relative;
           width: 80%;
           top: -150px;
-          margin:auto;
+          margin: auto;
         }
         h1,
         h2,
@@ -172,13 +170,12 @@ flex-wrap: wrap;
       }
       .skill-set-content {
         width: 100%;
-        @include breakpoint(md){
+        @include breakpoint(md) {
           width: 80%;
           margin: auto;
-          h2{
+          h2 {
             margin-bottom: 2em;
           }
-          
         }
         p {
           margin-top: 1em;
@@ -196,8 +193,8 @@ flex-wrap: wrap;
       .skill-set-item {
         width: 40%;
         margin: 5%;
-        @include breakpoint(sm){
-          width: 90%;;
+        @include breakpoint(sm) {
+          width: 90%;
         }
       }
       .skill-set-illustration-wrapper {
@@ -250,7 +247,7 @@ flex-wrap: wrap;
       h2 {
         margin-bottom: 2em;
       }
-      @include breakpoint(md){
+      @include breakpoint(md) {
         width: 80%;
         margin: auto;
         margin-top: 10em;
@@ -272,7 +269,7 @@ flex-wrap: wrap;
           margin: 3.5em auto;
           flex-direction: column;
           display: flex;
-          margin-left:5%;
+          margin-left: 5%;
         }
         &:nth-of-type(3) {
           margin-left: 15em;
@@ -282,7 +279,7 @@ flex-wrap: wrap;
           }
           @include breakpoint(sm) {
             margin: 3.5em auto;
-            margin-left:5%;
+            margin-left: 5%;
           }
         }
         img {
@@ -294,16 +291,16 @@ flex-wrap: wrap;
           box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
             0 8px 16px -8px rgba(0, 0, 0, 0.3),
             0 -6px 16px -6px rgba(0, 0, 0, 0.025);
-            @include breakpoint(sm) {
-              margin: 0;
-            }
+          @include breakpoint(sm) {
+            margin: 0;
+          }
         }
         .project-details {
           padding-top: 1.5em;
-          @include breakpoint(md){
+          @include breakpoint(md) {
             padding-top: 0;
           }
-          @include breakpoint(sm){
+          @include breakpoint(sm) {
             padding-top: 1em;
             width: 90%;
           }
@@ -360,7 +357,7 @@ flex-wrap: wrap;
       margin-top: 10em;
       position: relative;
       @include breakpoint(sm) {
-        margin-top:5em;
+        margin-top: 5em;
       }
       .blog-title {
         font-weight: bold;
@@ -422,7 +419,7 @@ flex-wrap: wrap;
         }
         @include breakpoint(sm) {
           width: 80%;
-          margin:.5em;
+          margin: 0.5em;
         }
         &:hover {
           transform: translateY(-2px);
@@ -442,7 +439,7 @@ flex-wrap: wrap;
         bottom: 0em;
         @include breakpoint(md) {
           right: 13em;
-          opacity: .2;
+          opacity: 0.2;
         }
         @include breakpoint(sm) {
           display: none;
