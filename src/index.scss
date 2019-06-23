@@ -418,8 +418,8 @@ body {
           width: 38%;
         }
         @include breakpoint(sm) {
-          width: 80%;
           margin: 0.5em;
+          width: 80%;
         }
         &:hover {
           transform: translateY(-2px);
