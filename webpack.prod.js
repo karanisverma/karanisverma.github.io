@@ -7,6 +7,7 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
+var BrotliPlugin = require('brotli-webpack-plugin');
 
 // const htmlWebpackMultiBuildPlugin = require('html-webpack-multi-build-plugin');
 // const template = require.resolve('html-webpack-multi-build-plugin/template.ejs') 
@@ -83,12 +84,14 @@ module.exports = merge(common, {
           chunkFilename: "[id].css"
       }), // this plugin is for extracting css files from js 
       new CompressionPlugin({
-        filename: '[path].gz[query]',
+        filename: '[path]',
         algorithm: 'gzip',
         test: /\.(js|css|html|svg|ttf|woff|eot)$/,
-        threshold: 10240,
-        minRatio: 0.8,
-        deleteOriginalAssets: false,
       }),
+      // this plugin for 
+    //   new BrotliPlugin({
+    //     asset: '[path].br',
+    //     test: /\.(js|css|html|svg|ttf|woff|eot)$/,
+    // })
     ]
   })
