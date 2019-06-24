@@ -1,5 +1,5 @@
 @import "styles/style";
-html{
+html {
   scroll-behavior: smooth;
 }
 body {
@@ -13,10 +13,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   -webkit-font-smoothing: subpixel-antialiased;
-  .text-highlight{
+  .text-highlight {
     display: inline-block;
     line-height: 0;
-    padding-bottom: .6em;
+    padding-bottom: 0.6em;
     color: black;
     background-color: #35cd6187;
   }
@@ -405,7 +405,7 @@ body {
         @include breakpoint(sm) {
           bottom: 0;
           top: auto;
-          opacity: .2;
+          opacity: 0.2;
         }
         @include breakpoint(md) {
           right: 0;
