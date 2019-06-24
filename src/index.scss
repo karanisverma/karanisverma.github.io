@@ -13,6 +13,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   -webkit-font-smoothing: subpixel-antialiased;
+  .text-highlight{
+    display: inline-block;
+    line-height: 0;
+    padding-bottom: .6em;
+    color: black;
+    background-color: #35cd6187;
+  }
   @include breakpoint(md) {
     width: 100%;
   }
@@ -359,9 +366,9 @@ body {
     &.blog {
       margin-top: 10em;
       position: relative;
-      @include breakpoint(sm) {
-        margin-top: 5em;
-      }
+      // @include breakpoint(sm) {
+      //   margin-top: 5em;
+      // }
       .blog-title {
         font-weight: bold;
         margin-bottom: 0.5em;
@@ -398,6 +405,7 @@ body {
         @include breakpoint(sm) {
           bottom: 0;
           top: auto;
+          opacity: .2;
         }
         @include breakpoint(md) {
           right: 0;
