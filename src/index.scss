@@ -16,10 +16,9 @@ body {
   .text-highlight {
     display: inline;
     line-height: 0;
-    padding: 0.25em;
     border-radius: 0.25em;
     color: black;
-    background: url(./assets/highlight-brush-stroke.svg);
+    background: url('./assets/highlight-brush-stroke.svg');
     background-repeat: no-repeat;
     background-size: 125% 100%;
     padding: 20px 0;
@@ -224,7 +223,6 @@ body {
       .skill-set-icon {
         padding: 0.3em;
         background: #35cd61;
-        border-radius: 5em;
         height: 3em;
         width: 3em;
         justify-content: center;
