@@ -17,7 +17,7 @@ body {
     display: inline;
     line-height: 0;
     padding: 0.25em;
-    border-radius: .25em;
+    border-radius: 0.25em;
     color: black;
     background: url(./assets/highlight-brush-stroke.svg);
     background-repeat: no-repeat;
@@ -239,8 +239,12 @@ body {
         }
       }
       @keyframes morph {
-        0% {border-radius: 38% 62% 57% 43% / 43% 50% 50% 57%;} 
-        100% {border-radius: 71% 29% 33% 67% / 35% 62% 38% 65%  ;} 
+        0% {
+          border-radius: 38% 62% 57% 43% / 43% 50% 50% 57%;
+        }
+        100% {
+          border-radius: 71% 29% 33% 67% / 35% 62% 38% 65%;
+        }
       }
       .circle {
         width: 13em;
