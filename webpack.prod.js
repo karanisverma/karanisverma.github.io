@@ -8,7 +8,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-// var BrotliPlugin = require('brotli-webpack-plugin');
+var BrotliPlugin = require('brotli-webpack-plugin');
 
 // const htmlWebpackMultiBuildPlugin = require('html-webpack-multi-build-plugin');
 // const template = require.resolve('html-webpack-multi-build-plugin/template.ejs') 
@@ -88,15 +88,15 @@ module.exports = merge(common, {
         { from: './src/public/', to: './public' }
       ]),
       new CompressionPlugin({
-        filename: '[path]',
+        filename: 'gzip/[path]',
         algorithm: 'gzip',
         test: /\.(js|css|html|svg|ttf|woff|eot)$/,
       }),
 
       // this plugin for 
-    //   new BrotliPlugin({
-    //     asset: '[path].br',
-    //     test: /\.(js|css|html|svg|ttf|woff|eot)$/,
-    // })
+      new BrotliPlugin({
+        asset: 'br/[path]',
+        test: /\.(js|css|html|svg|ttf|woff|eot)$/,
+    })
     ]
   })
