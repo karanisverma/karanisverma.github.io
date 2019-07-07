@@ -210,6 +210,33 @@ body {
         margin: 5%;
         @include breakpoint(sm) {
           width: 90%;
+          margin-block: 2em;
+        }
+        .skill-logos{
+          margin-top:10px;
+          display: flex;
+          flex-wrap: wrap;
+          a.logo{
+            cursor: pointer;
+          }
+          .logo{
+            width: fit-content;
+            padding: 6px;
+            border: 1px solid rgba(53,205,97,0.81176);
+            border-radius: 38% 62% 57% 43% / 43% 50% 50% 57%;
+            margin: 3px;
+            display: flex;
+            animation: morph 2s ease-in-out infinite both alternate;
+            animation-play-state: paused; 
+            &:hover{
+              animation-play-state: running; 
+              background: rgba(53,205,97,0.21176);
+              border: 1px solid rgba(53,205,97,0.21176);
+            }
+          }
+          img{
+            width: 25px;
+          }
         }
       }
       .skill-set-illustration-wrapper {
