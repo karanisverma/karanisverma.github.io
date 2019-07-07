@@ -56,7 +56,10 @@ jobs:
           arguments: |
             --acl public-read \
             --cache-control "max-age=31557600" \
-
+      - run:
+          name: Invalidating CloudFront Cache
+          command: |
+            aws cloudfront create-invalidation --distribution-id EG9PT6BM3E0CG --paths /\*
 workflows:
   version: 2.1
   build-and-deploy:
