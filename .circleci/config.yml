@@ -34,7 +34,7 @@ jobs:
           overwrite: true
       - aws-s3/sync:
           from: build/gzip
-          to: 's3://karanverma.me'
+          to: 's3://karanverma.me/gzip'
           arguments: |
             --acl public-read \
             --cache-control "max-age=31557600" \
@@ -42,7 +42,7 @@ jobs:
           overwrite: true
       - aws-s3/sync:
           from: build/br
-          to: 's3://karanverma.me'
+          to: 's3://karanverma.me/br'
           arguments: |
             --acl public-read \
             --cache-control "max-age=31557600" \
