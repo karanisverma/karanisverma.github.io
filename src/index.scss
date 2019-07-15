@@ -145,6 +145,13 @@ body {
         margin-top: 5em;
         word-spacing: 2px;
         color: #4f4f4f;
+        a {
+          color: #35cd61;
+          font-weight: bold;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
         @include breakpoint(md) {
           width: 80%;
           position: absolute;
