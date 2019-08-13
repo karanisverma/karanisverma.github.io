@@ -29,10 +29,14 @@ body {
   }
   button {
     @include btn("primary", "small");
+    -webkit-text-fill-color: white;
+    text-fill-color: white;
     @include breakpoint(md) {
       color: #35cd61;
       background: white;
       border-color: #35cd61;
+      -webkit-text-fill-color: #35cd61;
+      text-fill-color: #35cd61;
     }
     position: relative;
     z-index: 1;
@@ -54,6 +58,20 @@ body {
     .navbar-logo {
       font-family: "Oleo Script Swash Caps", cursive;
       font-size: 2em;
+      background: linear-gradient(79deg,#00d301,#36c275 50%,#00a562);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-fill-color: transparent;
+      @include breakpoint(md) {
+        color: black;
+        -webkit-text-fill-color: inherit;
+        text-fill-color: inherit;
+      }
+      @include breakpoint(sm) {
+        color: black;
+        -webkit-text-fill-color: inherit;
+        text-fill-color: inherit;
+      }
     }
     .navbar-links .navbar-wrapper {
       display: flex;
@@ -146,8 +164,16 @@ body {
         word-spacing: 2px;
         color: #4f4f4f;
         a {
-          color: #35cd61;
+          background: linear-gradient(79deg,#00d301,#36c275 50%,#00a562);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          text-fill-color: transparent;
           font-weight: bold;
+          @include breakpoint(md) {
+            color: #4f4f4f;
+            -webkit-text-fill-color: inherit;
+            text-fill-color: inherit;
+          }
           &:hover {
             text-decoration: underline;
           }
@@ -483,11 +509,14 @@ body {
         }
         &:hover {
           transform: translateY(-2px);
-          border: 2px solid rgba(53, 205, 97, 0.8);
+          // border: 2px solid rgba(53, 205, 97, 0.8);
+          border-image: linear-gradient(79deg, #00d301, #36c275 50%, #00a562) 1 100%;
           box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.1),
             0 18px 36px -18px rgba(0, 0, 0, 0.1),
             0 -12px 36px -8px rgba(0, 0, 0, 0.01);
-        }
+
+          }
+
       }
       .circle {
         width: 13em;
